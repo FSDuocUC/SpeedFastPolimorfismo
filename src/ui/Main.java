@@ -13,7 +13,7 @@ public class Main {
         encomienda.asignarRepartidor();
         express.asignarRepartidor();
 
-        // Métodos sobrecargados
+        // Metodos sobrecargados
         comida.asignarRepartidor("Carlos");
         encomienda.asignarRepartidor("Ana");
         express.asignarRepartidor("Luis");
