@@ -4,18 +4,17 @@ import model.*;
 
 public class Main {
     public static void main(String[] args) {
-        PedidoComida comida = new PedidoComida(1, "Av. Principal 123");
-        PedidoEncomienda encomienda = new PedidoEncomienda(2, "Calle Secundaria 456");
-        PedidoExpress express = new PedidoExpress(3, "Plaza Central 789");
+        Pedido comida = new PedidoComida(1, "Av. Principal 123", 3);
+        Pedido encomienda = new PedidoEncomienda(2, "Calle Secundaria 456", 10);
+        Pedido express = new PedidoExpress(3, "Pasaje Rápido 789", 7);
 
-        // Métodos sobrescritos
-        comida.asignarRepartidor();
-        encomienda.asignarRepartidor();
-        express.asignarRepartidor();
+        comida.mostrarResumen();
+        System.out.println("Tiempo estimado: " + comida.calcularTiempoEntrega() + " min\n");
 
-        // Métodos sobrecargados
-        comida.asignarRepartidor("Carlos");
-        encomienda.asignarRepartidor("Ana");
-        express.asignarRepartidor("Luis");
+        encomienda.mostrarResumen();
+        System.out.println("Tiempo estimado: " + encomienda.calcularTiempoEntrega() + " min\n");
+
+        express.mostrarResumen();
+        System.out.println("Tiempo estimado: " + express.calcularTiempoEntrega() + " min\n");
     }
 }

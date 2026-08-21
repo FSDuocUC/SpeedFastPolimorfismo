@@ -1,17 +1,12 @@
 package model;
 
 public class PedidoEncomienda extends Pedido {
-    public PedidoEncomienda(int idPedido, String direccionEntrega) {
-        super(idPedido, direccionEntrega, "Encomienda");
+    public PedidoEncomienda(int idPedido, String direccionEntrega, double distanciaKm) {
+        super(idPedido, direccionEntrega, distanciaKm);
     }
 
     @Override
-    public void asignarRepartidor() {
-        System.out.println("Pedido de encomienda " + idPedido + ": validar peso y embalaje antes de asignar.");
-    }
-
-    @Override
-    public void asignarRepartidor(String nombreRepartidor) {
-        System.out.println("Repartidor " + nombreRepartidor + " asignado al pedido de encomienda " + idPedido + " (validar peso y embalaje).");
+    public int calcularTiempoEntrega() {
+        return (int)(20 + 1.5 * distanciaKm);
     }
 }
