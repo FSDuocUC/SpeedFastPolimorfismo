@@ -47,4 +47,4 @@ En la segunda semana se refactorizó el proyecto para hacerlo más robusto y reu
 ## Ejecución
 1. Clona el repositorio:
    ```bash
- https://github.com/FSDuocUC/SpeedFastPolimorfismo.git
+   git clone https://github.com/FSDuocUC/SpeedFastPolimorfismo.git
