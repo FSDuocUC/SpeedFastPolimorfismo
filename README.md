@@ -33,12 +33,37 @@ En la segunda semana se refactorizó el proyecto para hacerlo más robusto y reu
 
 ---
 
+## Semana 3 – Interfaces y controlador de envíos
+En la tercera semana se amplió el sistema para integrar de forma conjunta **abstracción, polimorfismo e interfaces**:
+- Se declararon las interfaces:
+  - `Despachable` → método `despachar()`.  
+  - `Cancelable` → método `cancelar()`.  
+  - `Rastreable` → método `verHistorial()`.  
+- Se implementaron estas interfaces en las clases de pedidos según sus responsabilidades.  
+- Se creó la clase **ControladorDeEnvios**, encargada de registrar y mostrar el historial de entregas mediante un `ArrayList`.  
+- Se actualizó la clase `Main` para simular:
+  - Asignación de repartidores (automática y manual).  
+  - Cálculo y visualización del tiempo estimado de entrega.  
+  - Despacho y cancelación de pedidos.  
+  - Visualización del historial de entregas realizadas.  
+
+**Conceptos aplicados:**
+- **Polimorfismo**: Sobrescritura de `asignarRepartidor()` y sobrecarga con `asignarRepartidor(String nombre)`.  
+- **Abstracción**: Clase abstracta `Pedido` con atributos comunes y método abstracto `calcularTiempoEntrega()`.  
+- **Interfaces**: Desacoplamiento de responsabilidades con `Despachable`, `Cancelable` y `Rastreable`.  
+
+---
+
 ## Estructura del proyecto
 - **src/model/**  
   - `Pedido` (abstracta)  
   - `PedidoComida`  
   - `PedidoEncomienda`  
   - `PedidoExpress`  
+  - `Despachable` (interface)  
+  - `Cancelable` (interface)  
+  - `Rastreable` (interface)  
+  - `ControladorDeEnvios`  
 - **src/ui/**  
   - `Main` (punto de entrada del programa)
 
@@ -47,4 +72,4 @@ En la segunda semana se refactorizó el proyecto para hacerlo más robusto y reu
 ## Ejecución
 1. Clona el repositorio:
    ```bash
-   https://github.com/FSDuocUC/SpeedFastPolimorfismo.git
+   git clone https://github.com/FSDuocUC/SpeedFastPolimorfismo.git
