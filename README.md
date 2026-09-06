@@ -54,6 +54,22 @@ En la tercera semana se amplió el sistema para integrar de forma conjunta **abs
 
 ---
 
+## Semana 4 – Concurrencia con hilos
+En la cuarta semana se incorporó la **programación multihilo** para simular cómo varios repartidores realizan entregas en paralelo:
+
+- Se creó la clase **Repartidor**, que implementa `Runnable` y procesa una lista de pedidos.  
+- Cada pedido se entrega con pausas aleatorias (`Thread.sleep()`), mostrando mensajes de progreso en consola.  
+- En la clase `Main`, se instancian tres repartidores con pedidos distintos.  
+- Se utiliza **ExecutorService** para ejecutar los repartidores como hilos concurrentes.  
+- La simulación finaliza cuando todos los repartidores completan sus entregas.
+
+**Conceptos aplicados:**
+- **Runnable**: Implementación de tareas concurrentes.  
+- **Thread.sleep()**: Simulación de tiempos de entrega.  
+- **ExecutorService**: Gestión de múltiples hilos en paralelo.  
+
+---
+
 ## Estructura del proyecto
 - **src/model/**  
   - `Pedido` (abstracta)  
@@ -64,12 +80,14 @@ En la tercera semana se amplió el sistema para integrar de forma conjunta **abs
   - `Cancelable` (interface)  
   - `Rastreable` (interface)  
   - `ControladorDeEnvios`  
+- **src/concurrency/**  
+  - `Repartidor`  
 - **src/ui/**  
   - `Main` (punto de entrada del programa)
 
 ---
 
-## Ejecución
+## 🚀 Ejecución
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/FSDuocUC/SpeedFastPolimorfismo.git
