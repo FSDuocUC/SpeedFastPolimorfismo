@@ -11,18 +11,21 @@ public abstract class Pedido {
         this.distanciaKm = distanciaKm;
     }
 
-    public void mostrarResumen() {
-        System.out.println("Pedido #" + idPedido + " → Dirección: " + direccionEntrega + ", Distancia: " + distanciaKm + " km");
+    // ✅ Getters necesarios
+    public int getIdPedido() {
+        return idPedido;
     }
 
+    public String getDireccionEntrega() {
+        return direccionEntrega;
+    }
+
+    public double getDistanciaKm() {
+        return distanciaKm;
+    }
+
+    // Métodos abstractos que cada subclase debe implementar
     public abstract int calcularTiempoEntrega();
 
-    // Polimorfismo: sobrecarga y sobrescritura
-    public void asignarRepartidor() {
-        System.out.println("Repartidor asignado automáticamente.");
-    }
-
-    public void asignarRepartidor(String nombre) {
-        System.out.println("Repartidor asignado manualmente: " + nombre);
-    }
+    public abstract void mostrarResumen();
 }

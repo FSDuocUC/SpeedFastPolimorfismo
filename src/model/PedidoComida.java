@@ -1,27 +1,22 @@
 package model;
 
-public class PedidoComida extends Pedido implements Despachable, Cancelable {
+public class PedidoComida extends Pedido {
+
     public PedidoComida(int idPedido, String direccionEntrega, double distanciaKm) {
         super(idPedido, direccionEntrega, distanciaKm);
     }
 
     @Override
     public int calcularTiempoEntrega() {
-        return (int)(15 + 2 * distanciaKm);
+        // Ejemplo: tiempo = distancia * 5 minutos
+        return (int)(distanciaKm * 5);
     }
 
     @Override
-    public void asignarRepartidor() {
-        System.out.println("Repartidor especializado en comida asignado.");
-    }
-
-    @Override
-    public void despachar() {
-        System.out.println("Pedido de comida despachado.");
-    }
-
-    @Override
-    public void cancelar() {
-        System.out.println("Pedido de comida cancelado.");
+    public void mostrarResumen() {
+        System.out.println("🍔 Pedido Comida #" + idPedido +
+                " | Dirección: " + direccionEntrega +
+                " | Distancia: " + distanciaKm + " km" +
+                " | Tiempo estimado: " + calcularTiempoEntrega() + " min");
     }
 }

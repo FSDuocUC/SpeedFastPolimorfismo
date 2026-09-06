@@ -1,27 +1,22 @@
 package model;
 
-public class PedidoEncomienda extends Pedido implements Despachable, Rastreable {
+public class PedidoEncomienda extends Pedido {
+
     public PedidoEncomienda(int idPedido, String direccionEntrega, double distanciaKm) {
         super(idPedido, direccionEntrega, distanciaKm);
     }
 
     @Override
     public int calcularTiempoEntrega() {
-        return (int)(20 + 1.5 * distanciaKm);
+        // Ejemplo: tiempo base 20 min + 2 min por km
+        return (int)(20 + distanciaKm * 2);
     }
 
     @Override
-    public void asignarRepartidor() {
-        System.out.println("Repartidor de encomiendas asignado.");
-    }
-
-    @Override
-    public void despachar() {
-        System.out.println("Encomienda despachada.");
-    }
-
-    @Override
-    public void verHistorial() {
-        System.out.println("Historial de encomiendas mostrado.");
+    public void mostrarResumen() {
+        System.out.println("📦 Pedido Encomienda #" + idPedido +
+                " | Dirección: " + direccionEntrega +
+                " | Distancia: " + distanciaKm + " km" +
+                " | Tiempo estimado: " + calcularTiempoEntrega() + " min");
     }
 }
